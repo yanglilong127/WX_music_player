@@ -1,0 +1,26 @@
+<import src='templates/movie_list/movie_list.wxml' />
+<import src='templates/movie_grid/movie_grid.wxml' />
+
+<view class='search'>
+  <icon type='search' size='13' color='#405f80' class='search_img'></icon>
+  <input type='text' placeholder='输入电影名' placeholder-class='placeholder_sty'
+    bindinput='onBindInput' bindconfirm='onBindConfirm' value='{{searchText}}' />
+  <icon type='clear' wx:if='{{searchTempShow}}' size='13' color='#405f80' class='clear_img'
+    catchtap='onCancelImgTap'></icon>
+</view>
+<view class='container'  wx:if='{{containerShow}}'>
+  <view class='movies_template'>
+    <template is='movie_list_template' data="{{...inTheaters}}" />
+  </view>
+  <view class='movies_template'>
+    <template is='movie_list_template' data="{{...comingSoon}}" />
+  </view>
+  <view class='movies_template'>
+    <template is='movie_list_template' data="{{...top250}}"/>
+  </view>
+</view>
+
+<!--搜索得到的结果-->
+<view class='search_pannel'  wx:if='{{!containerShow}}'>
+  <template is='movie_grid_template' data='{{...searchData}}' />
+</view>

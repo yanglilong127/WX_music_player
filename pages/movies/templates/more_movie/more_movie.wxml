@@ -1,0 +1,7 @@
+<import src='../movie_grid/movie_grid.wxml' />
+
+
+<template is='movie_grid_template' data='{{movies}}' />
+<view wx:if='{{no_more}}' class="no_more">
+  <text class='no_more_text'>没有更多啦</text>
+</view>

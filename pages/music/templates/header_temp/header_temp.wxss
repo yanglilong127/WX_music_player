@@ -1,0 +1,53 @@
+.music_header_container{
+  display: flex;
+  flex-direction: row;
+  height: 80rpx;
+  background: #2ca2f9;
+  justify-content:center;
+  align-items:center;
+  position: relative;
+}
+
+.music_search_input{
+  height: 60rpx;
+  width: 90%;
+  font-size: 24rpx;
+  padding-left: 60rpx;
+  border-radius: 8px;
+  color: #fff;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  box-shadow: 0 0 8px #000;
+}
+.music_search_placeholder{
+  color: #e5e5e5;
+}
+
+.serach_icon{
+  position: absolute;
+  top: 22rpx;
+  left: 7%;
+}
+
+.delete_icon{
+  position: absolute;
+  top: 22rpx;
+  right: 7%;
+}
+
+.key_music_lists{
+  position: absolute;
+  width: 90%;
+  border: 1px solid #2ca2f9;
+  border-radius: 8px;
+  background-color: #fff;
+  z-index: 10;
+  top:70rpx;
+}
+
+.key_music_name{
+  display: block;
+  font-size:12px;
+  line-height: 60rpx;
+  text-indent: 18rpx;
+}

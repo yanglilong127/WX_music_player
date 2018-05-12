@@ -1,0 +1,48 @@
+<!--搜索头部-->
+<import src='templates/header_temp/header_temp.wxml'  />
+<!--音乐播放底部-->
+<import src='templates/player/player.wxml'  />
+
+<!--music.wxml-->
+<view class="container">
+  <!--搜索框-->
+  <template is='music_header_temp' data='{{input_val,keyword_resultList}}' />
+  <!-- <view class='header_nav'>
+    <view class="new_music head_music {{new_active? 'new_active': ''}}">新歌</view>
+    <view class="reguest_music head_music {{new_active? '': 'new_active'}}">推荐</view>
+  </view> -->
+  <!--轮播图-->
+  <swiper indicator-dots="true"
+    autoplay="true" interval="3000" duration="500" indicator-active-color='#fff'>
+    <block wx:for="{{imgUrls}}" wx:key='{{index}}'>
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--歌曲列表-->
+  <view class='music_lists'>
+    <view class='result_cont' wx:if='{{song_resultList.length!=0}}'>
+      <text>共有</text>
+      <text class='count'>{{searchCount}}</text>
+      <text>条结果</text>
+    </view>
+    <view class='music_contain'>
+      <block wx:for='{{song_resultList}}' wx:key='{{index}}'>
+        <view class="music_list {{index ==isPlayIndex? 'active': ''}}" 
+          data-index='{{index}}'
+          data-album_id='{{item.album_id}}'
+          data-hash='{{item.hash}}'
+          data-song_name='{{item.SongName}}'
+          data-singer_name='{{item.SingerName}}'
+          catchtap='musicPlay'>
+          <text class='music_name'>{{item.SongName}}</text>
+          <text class='singer_name'>{{item.SingerName}}</text>
+        </view>
+      </block> 
+    </view>
+    <view class='no_data' wx:if='{{song_resultList.length==0}}'>暂无歌曲</view>
+  </view>
+</view>
+
+<template wx:if='{{isPlaying}}' is='player_temp' data='{{bottom_song_info,isPause}}' />

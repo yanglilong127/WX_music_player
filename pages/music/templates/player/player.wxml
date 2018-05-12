@@ -1,0 +1,24 @@
+<template name='player_temp'>
+  <view class='player_container'>
+    <view class='player_left'>
+      <view class='photo_img'>
+        <image src='{{bottom_song_info.img}}' class="{{isPause? '': 'loop_circle'}}"></image>
+      </view>
+      <view class='singer_text'>
+        <text class='song_name'>{{bottom_song_info.song_name}}</text>
+        <text class='singer_name'>{{bottom_song_info.singer_name}}</text>
+      </view>
+    </view>
+    <view class='player_right'>
+      <image class='play_prev' 
+        catchtap='onPlayPrev'
+        src='/images/icon/prev.png'></image>
+      <image class='play_pause' 
+        catchtap='onMusicTap'
+        src="{{isPause? '/images/icon/play.png': '/images/icon/pause.png'}}"></image>
+      <image class='play_next'
+        catchtap='onPlayNext'
+        src='/images/icon/next.png'></image>
+    </view>
+  </view>
+</template>

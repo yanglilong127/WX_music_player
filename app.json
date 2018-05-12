@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "pages/music/music",
+    "pages/movies/movies",
+    "pages/movies/templates/more_movie/more_movie",
+    "pages/movies/templates/movie_detail/movie_detail",
+    "pages/reward/reward"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#405f80",
+    "navigationBarTitleText": "Burt组合",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/music/music",
+        "text": "音乐",
+        "iconPath": "images/tab/music.png",
+        "selectedIconPath": "images/tab/music_hl.png"
+      },
+      {
+        "pagePath": "pages/movies/movies",
+        "text": "电影",
+        "iconPath": "images/tab/dianying.png",
+        "selectedIconPath": "images/tab/dianying_hl.png"
+      },
+      {
+        "pagePath": "pages/reward/reward",
+        "iconPath": "images/tab/zanshang.png",
+        "selectedIconPath": "images/tab/zanshang_hl.png"
+      }
+    ]
+  }
+}

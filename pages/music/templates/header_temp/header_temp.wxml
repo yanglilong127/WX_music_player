@@ -1,0 +1,21 @@
+<template name='music_header_temp'>
+  <view class='music_header_container'>
+    <input class='music_search_input' type='text' placeholder='歌手/歌名' 
+      placeholder-class='music_search_placeholder' focus='true'
+      bindinput='input_search_music' value='{{input_val}}'
+      bindconfirm='search_music' data-keyword='{{input_val}}'></input>
+    <icon class='serach_icon' type="search" size="18" color='#fff' catchtap='search_music'
+        catchtap='search_music'/>
+    <icon wx-if='{{input_val}}' class='delete_icon' type="clear" size="18" color='#fff'
+      catchtap='delete_search' />
+    <!--根据关键词搜索得到的结果-->
+     <view class='key_music_lists'>
+      <block wx:for='{{keyword_resultList}}' wx:key='{{index}}'>
+        <text class='key_music_name' 
+          catchtap='search_music'
+          data-keyword='{{item.HintInfo}}'
+        >{{item.HintInfo}}</text>
+      </block>
+    </view>
+  </view>
+</template>
